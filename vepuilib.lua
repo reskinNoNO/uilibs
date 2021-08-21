@@ -405,7 +405,7 @@ local FirstTab = false
 
             ToggleFrameRainbow.Name = "ToggleFrameRainbow"
             ToggleFrameRainbow.Parent = ToggleFrame
-            ToggleFrameRainbow.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+            ToggleFrameRainbow.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
             ToggleFrameRainbow.BackgroundTransparency = 1.000
             ToggleFrameRainbow.Position = UDim2.new(-0.0198377371, 0, 0.00601506233, 0)
             ToggleFrameRainbow.Size = UDim2.new(0, 36, 0, 19)
@@ -550,7 +550,7 @@ local FirstTab = false
 
             SliderIndicator.Name = "SliderIndicator"
             SliderIndicator.Parent = SliderFrame
-            SliderIndicator.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+            SliderIndicator.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
             SliderIndicator.BorderSizePixel = 0
             SliderIndicator.Position = UDim2.new(-0.00260408712, 0, 0.0363603085, 0)
             SliderIndicator.Size = UDim2.new((start or 0) / max, 0, 0, 11)
@@ -1023,7 +1023,7 @@ local FirstTab = false
 
             HueGradient.Color =
                 ColorSequence.new {
-                    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 4)),
+                    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(118, 106, 255)),
                     ColorSequenceKeypoint.new(0.20, Color3.fromRGB(234, 255, 0)),
                     ColorSequenceKeypoint.new(0.40, Color3.fromRGB(21, 255, 0)),
                     ColorSequenceKeypoint.new(0.60, Color3.fromRGB(0, 255, 255)),
@@ -1119,7 +1119,7 @@ local FirstTab = false
 
             RainbowToggleFrameRainbow.Name = "RainbowToggleFrameRainbow"
             RainbowToggleFrameRainbow.Parent = RainbowToggleFrame
-            RainbowToggleFrameRainbow.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+            RainbowToggleFrameRainbow.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
             RainbowToggleFrameRainbow.BackgroundTransparency = 1.000
             RainbowToggleFrameRainbow.Position = UDim2.new(-0.0198377371, 0, 0.00601506233, 0)
             RainbowToggleFrameRainbow.Size = UDim2.new(0, 36, 0, 19)

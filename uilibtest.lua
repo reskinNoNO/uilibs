@@ -1,6 +1,7 @@
 local Library = {}
 
 local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
+local TweenService = game:GetService("TweenService")
 
 function Library:UI()
     game.CoreGui[LibName].Enabled = not game.CoreGui[LibName].Enabled
@@ -137,7 +138,7 @@ function Library:CreateWindow(title)
         callback = callback or function() end
 
         local TextButton = Instance.new("TextButton")
-        --local TextButtonCorner = Instance.new("UICorner")
+        local TextButtonCorner = Instance.new("UICorner")
 
         TextButton.Parent = MainScroll
         TextButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -155,10 +156,10 @@ function Library:CreateWindow(title)
             wait(.2)
             TweenService:Create(TextButton, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 14}):Play()
         end)
-        --[[
+        
         TextButtonCorner.CornerRadius = UDim.new(0, 4)
         TextButtonCorner.Name = "TextButtonCorner"
-        TextButtonCorner.Parent = TextButton]]
+        TextButtonCorner.Parent = TextButton
     end
 
     return Elements

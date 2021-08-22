@@ -13,7 +13,7 @@ local Tween = {}
 
 function Tween:Create(name, duration, properties)
     duration = duration or .3
-    local TI = TweenInfo.new(duration, Enum.EasingStyle.Sine, Enum.EasingDirection.In)
+    local TI = TweenInfo.new(duration, Enum.EasingStyle.Quart, Enum.EasingDirection.In)
     
     local Tweening = TweenService:Create(name, TI, properties)
     Tweening:Play()
@@ -391,88 +391,6 @@ function lib:Window(title)
                 TweenService:Create(dropdownItemButton, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 14}):Play()
             end)
         end
-    end
-
-    function InnerLib:Slider(text, min, max, callback)
-        local Slider = Instance.new("Frame")
-        local sliderCorner = Instance.new("UICorner")
-        local sliderFrame = Instance.new("Frame")
-        local sliderThing = Instance.new("Frame")
-        local sliderCircle = Instance.new("Frame")
-        local circleCorner = Instance.new("UICorner")
-        local Description = Instance.new("TextLabel")
-        local RunService = game.GetService(game, "RunService")
-        local RenderStepped = RunService.RenderStepped
-        local Mouse = game.Players.LocalPlayer:GetMouse()
-
-        Slider.Name = "Slider"
-        Slider.Parent = MainScroll
-        Slider.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-        Slider.BorderSizePixel = 0
-        Slider.Position = UDim2.new(0, 0, 0.554502368, 0)
-        Slider.Size = UDim2.new(0, 164, 0, 31)
-
-        sliderCorner.CornerRadius = UDim.new(0, 4)
-        sliderCorner.Name = "sliderCorner"
-        sliderCorner.Parent = Slider
-
-        sliderFrame.Name = "sliderFrame"
-        sliderFrame.Parent = Slider
-        sliderFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        sliderFrame.BackgroundTransparency = 1.000
-        sliderFrame.BorderSizePixel = 0
-        sliderFrame.Position = UDim2.new(0.063000001, 0, 0.430000007, 0)
-        sliderFrame.Size = UDim2.new(0, 144, 0, 5)
-
-        sliderThing.Name = "sliderThing"
-        sliderThing.Parent = sliderFrame
-        sliderThing.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-        sliderThing.BorderSizePixel = 0
-        sliderThing.Size = UDim2.new(0, 0, 0, 5)
-
-        sliderCircle.Name = "sliderCircle"
-        sliderCircle.Parent = sliderThing
-        sliderCircle.AnchorPoint = Vector2.new(0.5, 0.5)
-        sliderCircle.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
-        sliderCircle.BorderSizePixel = 0
-        sliderCircle.Position = UDim2.new(0.5, 0, 0.5, 0)
-        sliderCircle.Size = UDim2.new(0, 10, 0, 10)
-
-        circleCorner.CornerRadius = UDim.new(0, 50)
-        circleCorner.Name = "circleCorner"
-        circleCorner.Parent = sliderCircle
-
-        Description.Name = "Description"
-        Description.Parent = Test
-        Description.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-        Description.BorderColor3 = Color3.fromRGB(255, 255, 255)
-        Description.Position = UDim2.new(0.26999867, 0, 0.591712713, 0)
-        Description.Size = UDim2.new(0, 108, 0, 21)
-        Description.Font = Enum.Font.Gotham
-        Description.Text = text
-        Description.TextColor3 = Color3.fromRGB(255, 255, 255)
-        Description.TextScaled = true
-        Description.TextSize = 14.000
-        Description.Visible = false
-        Description.TextWrapped = true
-
-        function makeVisible()
-            Description.Visible = true
-        end
-
-        function makeInvisible()
-            Description.Visible = false
-        end
-
-        function updateDescriptionPosition()
-            Description.Position = UDim2.new(0, Mouse.X + 15, 0, Mouse.Y + 15)
-        end
-
-        Slider.MouseEnter:Connect(makeVisible)
-
-        Slider.MouseLeave:Connect(makeInvisible)
-
-        Slider.MouseMoved:Connect(updateDescriptionPosition)
     end
 
     return InnerLib

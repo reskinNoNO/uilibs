@@ -9,9 +9,21 @@ end
 local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100).."_SovwUILibrary")
 local TweenService = game:GetService("TweenService")
 
+local Tween = {}
+
+function Tween:Create(name, duration, properties)
+    duration = duration or .3
+    local TI = TweenInfo.new(duration, Enum.EasingStyle.Sine, Enum.EasingDirection.In)
+    
+    local Tweening = TweenService:Create(name, TI, properties)
+    Tweening:Play()
+end
+
 function lib:UI()
     game.CoreGui[LibName].Enabled = not game.CoreGui[LibName].Enabled
 end
+
+local Tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/Cryptweb/modules/main/TweenModule.lua"))()
 
 function lib:Window(title)
     local Test = Instance.new("ScreenGui")
@@ -115,6 +127,28 @@ function lib:Window(title)
     Arrow.TextColor3 = Color3.fromRGB(255, 255, 255)
     Arrow.TextSize = 15.000
     Arrow.TextWrapped = true
+    
+    local guiIsDropped = true
+    local debounce = false
+    Arrow.MouseButton1Click:Connect(function()
+        guiIsDropped = not guiIsDropped
+        
+        if debounce == false then
+            debounce = true
+            if guiIsDropped == true then
+                Tween:Create(SecondMain, .2, {Size = UDim2.new(0, 181, 0, 233)})
+                Tween:Create(Arrow, .2, {Rotation = 0})
+                guiIsDropped = true
+            else
+                Tween:Create(SecondMain, .2, {Size = UDim2.new(0, 181, 0, 0)})
+                Tween:Create(Arrow, .2, {Rotation = 180})
+                guiIsDropped = false
+            end
+            
+            wait(0.3)
+            debounce = false
+        end
+    end)
 
     SecondMain.Name = "SecondMain"
     SecondMain.Parent = Main
@@ -130,7 +164,7 @@ function lib:Window(title)
     MainScroll.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
     MainScroll.BorderSizePixel = 0
     MainScroll.Position = UDim2.new(0.0525027104, 0, 0.0414285958, 0)
-    MainScroll.Size = UDim2.new(0, 164, 0, 211)
+    MainScroll.Size = UDim2.new(0, 181, 0, 211)
     MainScroll.CanvasSize = UDim2.new(0, 0, 0, 0)
     MainScroll.ClipsDescendants = true
     MainScroll.ScrollBarThickness = 4
@@ -139,7 +173,7 @@ function lib:Window(title)
     ContainerLayout.Name = "ContainerLayout"
     ContainerLayout.Parent = MainScroll
     ContainerLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    ContainerLayout.Padding = UDim.new(0, 6)
+    ContainerLayout.Padding = UDim.new(0, 4)
 
     MainScroll.ChildAdded:Connect(function()
 		local ab = ContainerLayout.AbsoluteContentSize
@@ -223,13 +257,13 @@ function lib:Window(title)
         end)
     end
 
-    local dropdownSizes = {}
     function InnerLib:Dropdown(text, list, callback)
         text = text or "New Dropdown"
         list = list or {}
         callback = callback or function() end
 
         local DropYSize = 0
+        local dropdownSizes = {}
 
         local Dropdown = Instance.new("Frame")
         local dropdownCorner = Instance.new("UICorner")
@@ -239,7 +273,6 @@ function lib:Window(title)
         local dropdownItemsCorner = Instance.new("UICorner")
         local UIListLayout = Instance.new("UIListLayout")
 
-        Dropdown.LayoutOrder = 1
         Dropdown.Name = "Dropdown"
         Dropdown.Parent = MainScroll
         Dropdown.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -277,9 +310,9 @@ function lib:Window(title)
         dropdownButton.TextWrapped = true
 
         table.insert(dropdownSizes, #dropdownSizes + 1, dropdownItems.Size)
-        dropdownItems.LayoutOrder = 1
+        dropdownItems.Active = false
         dropdownItems.Name = #dropdownSizes
-        dropdownItems.Parent = Dropdown
+        dropdownItems.Parent = MainScroll
         dropdownItems.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
         dropdownItems.BorderSizePixel = 0
         dropdownItems.Position = UDim2.new(0, 0, 0.850000203, 0)
@@ -305,7 +338,7 @@ function lib:Window(title)
         dropdownButton.MouseButton1Click:Connect(function()
             if debounce == false then
                 debounce = true
-                if open == true then
+                if isDropped == true then
                     savedOffset = dropdownSizes[tonumber(dropdownItems.Name)] or dropdownItems.Size
                     tween = TweenService:Create(dropdownItems, tI, {Size = dropdownItems.Size - UDim2.new(0, 0, 0, DropYSize)})
                     tween:Play()
@@ -314,7 +347,7 @@ function lib:Window(title)
                     tween2:Play()
 
                     dropdownButton.Text = "+"
-                    open = false
+                    isDropped = false
                 else
                     savedOffset = dropdownSizes[tonumber(dropdownItems.Name)] or dropdownItems.Size
                     tween = TweenService:Create(dropdownItems, tI, {Size = dropdownItems.Size + UDim2.new(0, 0, 0, DropYSize)})
@@ -324,7 +357,7 @@ function lib:Window(title)
                     tween2:Play()
 
                     dropdownButton.Text = "-"
-                    open = true
+                    isDropped = true
                 end
 
                 wait(0.2)
@@ -333,7 +366,7 @@ function lib:Window(title)
         end)
 
         for i,v in next, list do
-            DropYSize = DropYSize + 31
+            DropYSize += 31
 
             local dropdownItemButton = Instance.new("TextButton")
 
@@ -346,7 +379,7 @@ function lib:Window(title)
             dropdownItemButton.Font = Enum.Font.Gotham
             dropdownItemButton.TextColor3 = Color3.fromRGB(255, 255, 255)
             dropdownItemButton.TextSize = 14.000
-	    dropdownItemButton.TextWrapped = true
+	        dropdownItemButton.TextWrapped = true
             dropdownItemButton.Text = v
 
             dropdownItemButton.MouseButton1Click:Connect(function()
@@ -358,6 +391,88 @@ function lib:Window(title)
                 TweenService:Create(dropdownItemButton, TweenInfo.new(.2, Enum.EasingStyle.Quad), {TextSize = 14}):Play()
             end)
         end
+    end
+
+    function InnerLib:Slider(text, min, max, callback)
+        local Slider = Instance.new("Frame")
+        local sliderCorner = Instance.new("UICorner")
+        local sliderFrame = Instance.new("Frame")
+        local sliderThing = Instance.new("Frame")
+        local sliderCircle = Instance.new("Frame")
+        local circleCorner = Instance.new("UICorner")
+        local Description = Instance.new("TextLabel")
+        local RunService = game.GetService(game, "RunService")
+        local RenderStepped = RunService.RenderStepped
+        local Mouse = game.Players.LocalPlayer:GetMouse()
+
+        Slider.Name = "Slider"
+        Slider.Parent = MainScroll
+        Slider.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+        Slider.BorderSizePixel = 0
+        Slider.Position = UDim2.new(0, 0, 0.554502368, 0)
+        Slider.Size = UDim2.new(0, 164, 0, 31)
+
+        sliderCorner.CornerRadius = UDim.new(0, 4)
+        sliderCorner.Name = "sliderCorner"
+        sliderCorner.Parent = Slider
+
+        sliderFrame.Name = "sliderFrame"
+        sliderFrame.Parent = Slider
+        sliderFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        sliderFrame.BackgroundTransparency = 1.000
+        sliderFrame.BorderSizePixel = 0
+        sliderFrame.Position = UDim2.new(0.063000001, 0, 0.430000007, 0)
+        sliderFrame.Size = UDim2.new(0, 144, 0, 5)
+
+        sliderThing.Name = "sliderThing"
+        sliderThing.Parent = sliderFrame
+        sliderThing.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+        sliderThing.BorderSizePixel = 0
+        sliderThing.Size = UDim2.new(0, 0, 0, 5)
+
+        sliderCircle.Name = "sliderCircle"
+        sliderCircle.Parent = sliderThing
+        sliderCircle.AnchorPoint = Vector2.new(0.5, 0.5)
+        sliderCircle.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+        sliderCircle.BorderSizePixel = 0
+        sliderCircle.Position = UDim2.new(0.5, 0, 0.5, 0)
+        sliderCircle.Size = UDim2.new(0, 10, 0, 10)
+
+        circleCorner.CornerRadius = UDim.new(0, 50)
+        circleCorner.Name = "circleCorner"
+        circleCorner.Parent = sliderCircle
+
+        Description.Name = "Description"
+        Description.Parent = Test
+        Description.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+        Description.BorderColor3 = Color3.fromRGB(255, 255, 255)
+        Description.Position = UDim2.new(0.26999867, 0, 0.591712713, 0)
+        Description.Size = UDim2.new(0, 108, 0, 21)
+        Description.Font = Enum.Font.Gotham
+        Description.Text = text
+        Description.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Description.TextScaled = true
+        Description.TextSize = 14.000
+        Description.Visible = false
+        Description.TextWrapped = true
+
+        function makeVisible()
+            Description.Visible = true
+        end
+
+        function makeInvisible()
+            Description.Visible = false
+        end
+
+        function updateDescriptionPosition()
+            Description.Position = UDim2.new(0, Mouse.X + 15, 0, Mouse.Y + 15)
+        end
+
+        Slider.MouseEnter:Connect(makeVisible)
+
+        Slider.MouseLeave:Connect(makeInvisible)
+
+        Slider.MouseMoved:Connect(updateDescriptionPosition)
     end
 
     return InnerLib

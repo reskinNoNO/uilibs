@@ -346,6 +346,7 @@ function lib:Window(title)
             dropdownItemButton.Font = Enum.Font.Gotham
             dropdownItemButton.TextColor3 = Color3.fromRGB(255, 255, 255)
             dropdownItemButton.TextSize = 14.000
+	    dropdownItemButton.TextWrapped = true
             dropdownItemButton.Text = v
 
             dropdownItemButton.MouseButton1Click:Connect(function()

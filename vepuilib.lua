@@ -107,7 +107,7 @@ local FirstTab = false
     
     MainFrame.Name = "MainFrame"
     MainFrame.Parent = Library
-    MainFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
+    MainFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
     MainFrame.Position = UDim2.new(0.340104192, 0, 0.297149122, 0)
     MainFrame.Size = UDim2.new(0, 614, 0, 395)
     MainFrame.Image = 'rbxassetid://0'
@@ -118,7 +118,7 @@ local FirstTab = false
 
     LeftFrame.Name = "LeftFrame"
     LeftFrame.Parent = MainFrame
-    LeftFrame.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+    LeftFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     LeftFrame.Position = UDim2.new(-0.000674468291, 0, -0.000149806539, 0)
     LeftFrame.Size = UDim2.new(0, 186, 0, 395)
     LeftFrame.Image = 'rbxassetid://0'
@@ -141,7 +141,7 @@ local FirstTab = false
 
     Circle.Name = "Circle"
     Circle.Parent = LeftFrame
-    Circle.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
+    Circle.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
     Circle.Position = UDim2.new(0.0834304541, 0, 0.0474189818, 0)
     Circle.Size = UDim2.new(0, 38, 0, 35) --38
     Circle.Image = "https://www.roblox.com/bust-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
@@ -187,7 +187,7 @@ local FirstTab = false
 
     RainbowLine.Name = "RainbowLine"
     RainbowLine.Parent = MainFrame
-    RainbowLine.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
+    RainbowLine.BackgroundColor3 = Color3.fromRGB(50,50,50)
     RainbowLine.Position = UDim2.new(-0.000674468291, 0, -0.000149783576, 0)
     RainbowLine.Size = UDim2.new(0, 614, 0, 2)
 
@@ -214,7 +214,7 @@ local FirstTab = false
 
         Tab.Name = "Tab"
         Tab.Parent = TabHolder
-        Tab.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
+        Tab.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
         Tab.Size = UDim2.new(0, 159, 0, 29)
         Tab.AutoButtonColor = false
         Tab.Font = Enum.Font.SourceSans
@@ -302,7 +302,7 @@ local FirstTab = false
 
             Button.Name = "Button"
             Button.Parent = Container
-            Button.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            Button.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             Button.Size = UDim2.new(0, 403, 0, 28)
             Button.AutoButtonColor = false
             Button.Font = Enum.Font.Gotham
@@ -328,7 +328,7 @@ local FirstTab = false
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.2, Enum.EasingStyle.Quad),
-                        {BackgroundColor3 = Color3.fromRGB(32, 33, 37)}
+                        {BackgroundColor3 = Color3.fromRGB(20, 20, 20)}
                     ):Play()
                 end
             )
@@ -368,7 +368,7 @@ local FirstTab = false
 
             Toggle.Name = "Toggle"
             Toggle.Parent = Container
-            Toggle.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            Toggle.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             Toggle.Position = UDim2.new(-0.747557044, 0, 0.729113936, 0)
             Toggle.Size = UDim2.new(0, 403, 0, 28)
             Toggle.AutoButtonColor = false
@@ -395,7 +395,7 @@ local FirstTab = false
 
             ToggleFrame.Name = "ToggleFrame"
             ToggleFrame.Parent = Toggle
-            ToggleFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
+            ToggleFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
             ToggleFrame.Position = UDim2.new(0.893300176, 0, 0.142857149, 0)
             ToggleFrame.Size = UDim2.new(0, 36, 0, 19)
 
@@ -405,7 +405,7 @@ local FirstTab = false
 
             ToggleFrameRainbow.Name = "ToggleFrameRainbow"
             ToggleFrameRainbow.Parent = ToggleFrame
-            ToggleFrameRainbow.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
+            ToggleFrameRainbow.BackgroundColor3 = Color3.fromRGB(50,50,50)
             ToggleFrameRainbow.BackgroundTransparency = 1.000
             ToggleFrameRainbow.Position = UDim2.new(-0.0198377371, 0, 0.00601506233, 0)
             ToggleFrameRainbow.Size = UDim2.new(0, 36, 0, 19)
@@ -445,7 +445,7 @@ local FirstTab = false
                     TweenService:Create(
                         Toggle,
                         TweenInfo.new(.2, Enum.EasingStyle.Quad),
-                        {BackgroundColor3 = Color3.fromRGB(32, 33, 37)}
+                        {BackgroundColor3 = Color3.fromRGB(20, 20, 20)}
                     ):Play()
                 end
             )
@@ -518,7 +518,7 @@ local FirstTab = false
 
             Slider.Name = "Slider"
             Slider.Parent = Container
-            Slider.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            Slider.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             Slider.Position = UDim2.new(-0.747557044, 0, 0.729113936, 0)
             Slider.Size = UDim2.new(0, 403, 0, 49)
             Slider.AutoButtonColor = false
@@ -541,7 +541,7 @@ local FirstTab = false
 
             SliderFrame.Name = "SliderFrame"
             SliderFrame.Parent = Slider
-            SliderFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
+            SliderFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
             SliderFrame.Position = UDim2.new(0.0223324299, 0, 0.563266039, 0)
             SliderFrame.Size = UDim2.new(0, 384, 0, 11)
 
@@ -550,7 +550,7 @@ local FirstTab = false
 
             SliderIndicator.Name = "SliderIndicator"
             SliderIndicator.Parent = SliderFrame
-            SliderIndicator.BackgroundColor3 = Color3.fromRGB(118, 106, 255)
+            SliderIndicator.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
             SliderIndicator.BorderSizePixel = 0
             SliderIndicator.Position = UDim2.new(-0.00260408712, 0, 0.0363603085, 0)
             SliderIndicator.Size = UDim2.new((start or 0) / max, 0, 0, 11)
@@ -628,7 +628,7 @@ local FirstTab = false
 
             Dropdown.Name = "Dropdown"
             Dropdown.Parent = Container
-            Dropdown.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            Dropdown.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             Dropdown.Position = UDim2.new(-0.747557044, 0, 0.729113936, 0)
             Dropdown.Size = UDim2.new(0, 403, 0, 28)
             Dropdown.AutoButtonColor = false
@@ -669,7 +669,7 @@ local FirstTab = false
 
             DropdownFrame.Name = "DropdownFrame"
             DropdownFrame.Parent = Container
-            DropdownFrame.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            DropdownFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             DropdownFrame.BorderSizePixel = 0
             DropdownFrame.Position = UDim2.new(0.334374994, 0, 0.604166687, 0)
             DropdownFrame.Size = UDim2.new(0, 403, 0, 0)
@@ -716,7 +716,7 @@ local FirstTab = false
                     TweenService:Create(
                         Dropdown,
                         TweenInfo.new(.2, Enum.EasingStyle.Quad),
-                        {BackgroundColor3 = Color3.fromRGB(32, 33, 37)}
+                        {BackgroundColor3 = Color3.fromRGB(20, 20, 20)}
                     ):Play()
                 end
             )
@@ -803,7 +803,7 @@ local FirstTab = false
 
                 Item.Name = "Item"
                 Item.Parent = DropdownHolder
-                Item.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+                Item.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
                 Item.Position = UDim2.new(0, 0, 0.0808080807, 0)
                 Item.Size = UDim2.new(0, 382, 0, 24)
                 Item.AutoButtonColor = false
@@ -829,7 +829,7 @@ local FirstTab = false
                         TweenService:Create(
                             Item,
                             TweenInfo.new(.2, Enum.EasingStyle.Quad),
-                            {BackgroundColor3 = Color3.fromRGB(32, 33, 37)}
+                            {BackgroundColor3 = Color3.fromRGB(20, 20, 20)}
                         ):Play()
                     end
                 )
@@ -887,7 +887,7 @@ local FirstTab = false
 
                         Item.Name = "Item"
                         Item.Parent = DropdownHolder
-                        Item.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+                        Item.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
                         Item.Position = UDim2.new(0, 0, 0.0808080807, 0)
                         Item.Size = UDim2.new(0, 382, 0, 24)
                         Item.AutoButtonColor = false
@@ -903,7 +903,7 @@ local FirstTab = false
                             TweenService:Create(Item, TweenInfo.new(.2, Enum.EasingStyle.Quad), {BackgroundColor3 = Color3.fromRGB(37, 39, 44)}):Play()
                         end)
                         Item.MouseLeave:Connect(function()
-                            TweenService:Create(Item, TweenInfo.new(.2, Enum.EasingStyle.Quad), {BackgroundColor3 = Color3.fromRGB(32, 33, 37)}):Play()
+                            TweenService:Create(Item, TweenInfo.new(.2, Enum.EasingStyle.Quad), {BackgroundColor3 = Color3.fromRGB(20, 20, 20)}):Play()
                         end)
 
                         Item.MouseButton1Click:Connect(function()
@@ -943,7 +943,7 @@ local FirstTab = false
 
             Colorpicker.Name = "Colorpicker"
             Colorpicker.Parent = Container
-            Colorpicker.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            Colorpicker.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             Colorpicker.Position = UDim2.new(-0.747557044, 0, 0.729113936, 0)
             Colorpicker.Size = UDim2.new(0, 403, 0, 28)
             Colorpicker.AutoButtonColor = false
@@ -1001,7 +1001,7 @@ local FirstTab = false
 
             ColorpickerFrame.Name = "ColorpickerFrame"
             ColorpickerFrame.Parent = Container
-            ColorpickerFrame.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            ColorpickerFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             ColorpickerFrame.BorderSizePixel = 0
             ColorpickerFrame.Position = UDim2.new(0.165624991, 0, 0.671052635, 0)
             ColorpickerFrame.Size = UDim2.new(0, 403, 0, 0)
@@ -1023,7 +1023,7 @@ local FirstTab = false
 
             HueGradient.Color =
                 ColorSequence.new {
-                    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(118, 106, 255)),
+                    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(50,50,50)),
                     ColorSequenceKeypoint.new(0.20, Color3.fromRGB(234, 255, 0)),
                     ColorSequenceKeypoint.new(0.40, Color3.fromRGB(21, 255, 0)),
                     ColorSequenceKeypoint.new(0.60, Color3.fromRGB(0, 255, 255)),
@@ -1068,7 +1068,7 @@ local FirstTab = false
 
             Confirm.Name = "Confirm"
             Confirm.Parent = ColorpickerFrame
-            Confirm.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            Confirm.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             Confirm.BackgroundTransparency = 0.010
             Confirm.Position = UDim2.new(0.612244904, 0, 0.0900000036, 0)
             Confirm.Size = UDim2.new(0, 145, 0, 27)
@@ -1083,7 +1083,7 @@ local FirstTab = false
 
             RainbowToggle.Name = "RainbowToggle"
             RainbowToggle.Parent = ColorpickerFrame
-            RainbowToggle.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            RainbowToggle.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             RainbowToggle.Position = UDim2.new(0.610732794, 0, 0.431324542, 0)
             RainbowToggle.Size = UDim2.new(0, 145, 0, 27)
             RainbowToggle.AutoButtonColor = false
@@ -1109,7 +1109,7 @@ local FirstTab = false
 
             RainbowToggleFrame.Name = "RainbowToggleFrame"
             RainbowToggleFrame.Parent = RainbowToggle
-            RainbowToggleFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
+            RainbowToggleFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
             RainbowToggleFrame.Position = UDim2.new(0.693, 0, 0.142857149, 0)
             RainbowToggleFrame.Size = UDim2.new(0, 36, 0, 19)
 
@@ -1154,7 +1154,7 @@ local FirstTab = false
                     TweenService:Create(
                         Colorpicker,
                         TweenInfo.new(.2, Enum.EasingStyle.Quad),
-                        {BackgroundColor3 = Color3.fromRGB(32, 33, 37)}
+                        {BackgroundColor3 = Color3.fromRGB(20, 20, 20)}
                     ):Play()
                 end
             )
@@ -1382,7 +1382,7 @@ local FirstTab = false
 
             Label.Name = "Label"
             Label.Parent = Container
-            Label.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            Label.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             Label.Size = UDim2.new(0, 403, 0, 28)
             Label.AutoButtonColor = false
             Label.Font = Enum.Font.Gotham
@@ -1404,7 +1404,7 @@ local FirstTab = false
 
             Label.Name = "Label"
             Label.Parent = Container
-            Label.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            Label.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             Label.Size = UDim2.new(0, 403, 0, 28)
             Label.AutoButtonColor = false
             Label.Font = Enum.Font.ArialBold
@@ -1431,7 +1431,7 @@ local FirstTab = false
 
             Textbox.Name = "Textbox"
             Textbox.Parent = Container
-            Textbox.BackgroundColor3 = Color3.fromRGB(32, 33, 37)
+            Textbox.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
             Textbox.Position = UDim2.new(-0.747557044, 0, 0.729113936, 0)
             Textbox.Size = UDim2.new(0, 403, 0, 28)
             Textbox.AutoButtonColor = false
@@ -1454,7 +1454,7 @@ local FirstTab = false
 
             TextboxFrame.Name = "TextboxFrame"
             TextboxFrame.Parent = Textbox
-            TextboxFrame.BackgroundColor3 = Color3.fromRGB(22, 23, 27)
+            TextboxFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
             TextboxFrame.Position = UDim2.new(0.650124013, 0, 0.142857149, 0)
             TextboxFrame.Size = UDim2.new(0, 134, 0, 19)
 
